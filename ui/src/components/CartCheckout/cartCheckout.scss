@@ -1,0 +1,42 @@
+@use "../../variables";
+
+.checkout-container {
+  text-align: center;
+  border-top: 1px solid variables.$app-font-color;
+  bottom: 0;
+  position: fixed;
+  width: 35vw;
+  background-color: variables.$color-white;
+  min-height: 2%;
+  .checkout {
+    margin: 1%;
+    .total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 3%;
+      p {
+        color: variables.$color-white;
+        font-size: large;
+      }
+      .proceed {
+        width: 85%;
+        text-align: start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .checkout-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .checkout-container .checkout .total {
+    .proceed {
+      width: 70%;
+    }
+  }
+}

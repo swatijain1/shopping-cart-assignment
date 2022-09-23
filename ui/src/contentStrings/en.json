@@ -33,5 +33,17 @@
       "invalidName": "Invalid Name",
       "unMatchedPassword": "Confirm Password should be same as Password."
     }
+  },
+  "cart": {
+    "heading": "My Cart",
+    "item": "item",
+    "items": "items",
+    "currency": "Rs. ",
+    "emptyCartHeading": "No items in your cart",
+    "emptyCartDescription": "Your favourite items are just a click away",
+    "promotion": "You won't find it cheaper anywhere",
+    "promoCodeMessage": "Promo code will be applied on payment page",
+    "proceed": "Proceed to checkout",
+    "startShopping": "Start Shopping"
   }
 }

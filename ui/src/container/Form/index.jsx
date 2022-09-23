@@ -31,15 +31,13 @@ const Form = ({ formType, error, formFields, onSubmithandler }) => {
             <h2>{heading}</h2>
             <p>{description}</p>
           </div>
-          <div>
-            <form>
-              {errorContainer}
-              {fieldsList}
-              <Button type="submit" onClickHandler={onSubmithandler}>
-                {buttonText}
-              </Button>
-            </form>
-          </div>
+          <form>
+            {errorContainer}
+            {fieldsList}
+            <Button type="submit" onClickHandler={onSubmithandler}>
+              {buttonText}
+            </Button>
+          </form>
         </div>
       </div>
       <div className="copyright">

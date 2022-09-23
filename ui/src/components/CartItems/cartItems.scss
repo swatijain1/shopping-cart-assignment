@@ -1,0 +1,54 @@
+@use "../../variables";
+
+.cart {
+  .cart-container {
+    .cart-items {
+      .empty-cart {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .item {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10%;
+        align-items: center;
+        background-color: variables.$color-white;
+        margin-top: 2%;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+
+        img {
+          width: 15%;
+          height: 15%;
+          margin-left: 5%;
+        }
+      }
+      h3 {
+        margin: 2% 0;
+        font-weight: bold;
+        color: variables.$color-black;
+      }
+      .item-description {
+        width: 50%;
+        .quantity {
+          display: flex;
+          gap: 10%;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 2%;
+          button {
+            width: 10%;
+            border-radius: 50%;
+            font-size: 1.3em;
+            padding: 0 0 1.5% 0;
+          }
+        }
+      }
+      .total-price {
+        font-size: large;
+      }
+    }
+  }
+}

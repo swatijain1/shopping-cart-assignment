@@ -1,0 +1,73 @@
+@use "../../variables";
+
+.cart {
+  .cart-overlay {
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow: hidden;
+  }
+  .cart-container {
+    height: 70vh;
+    width: 35vw;
+    background-color: variables.$app-grey-color;
+    z-index: 5;
+    bottom: 0;
+    right: 15%;
+    position: fixed;
+    .cart-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: variables.$color-black;
+      p {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-left: 2%;
+      }
+      .close {
+        width: 1em;
+        font-size: 3em;
+      }
+    }
+    .cart-items {
+      overflow-y: scroll;
+      height: 100%;
+    }
+    .promotion-banner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: variables.$color-white;
+      margin: 2%;
+      p {
+        padding-right: 20%;
+      }
+    }
+  }
+}
+
+/* .app {
+  overflow-y: hidden;
+  height: 100vh;
+}
+*/
+@media screen and (max-width: 1024px) {
+  .cart {
+    .cart-overlay {
+      display: none;
+    }
+    .cart-container {
+      height: 100%;
+      width: 100%;
+      right: 0;
+    }
+  }
+}
+// @media screen and (max-width: 480px) {
+
+// }

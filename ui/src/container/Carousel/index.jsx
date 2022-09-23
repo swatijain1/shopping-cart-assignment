@@ -41,13 +41,13 @@ const Carousel = () => {
         className="buttons back"
         onClick={() => changeImage(currentIndex - 1)}
       >
-        ❰
+        PREV
       </button>
       <button
         className="buttons next"
         onClick={() => changeImage(currentIndex + 1)}
       >
-        ❱
+        NEXT
       </button>
       <div className="dots">{dots}</div>
     </div>

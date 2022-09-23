@@ -14,15 +14,17 @@ const HomePageCategories = ({ categories }) => {
         <li key={category.key}>
           <Divider />
           <div
-            className={`category-list ${index % 2 === 0 && "toggle-content"}`}
+            className={`category-list${
+              index % 2 === 0 ? " toggle-content" : ""
+            }`}
           >
             <img src={category.imageUrl} alt={category.name} />
             <div className="description">
               <h2>{category.name}</h2>
               <p>{category.description}</p>
-              <div className="category-button">
-                <Button onClickHandler={explore}>Explore {category.key}</Button>
-              </div>
+              <Button
+                onClickHandler={explore}
+              >{`Explore ${category.key}`}</Button>
             </div>
           </div>
         </li>
