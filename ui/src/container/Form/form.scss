@@ -1,9 +1,11 @@
 @use "../../variables";
 
 .form {
-  margin: 0 25%;
+  margin: 0 10%;
   .form-details {
     display: flex;
+    justify-content: flex-start;
+    gap: 10%;
     margin: 5% 0 1% 0;
     .description {
       display: flex;
@@ -14,8 +16,7 @@
       margin-top: 2%;
     }
     form {
-      margin-left: 25%;
-      width: 25vw;
+      width: 45%;
     }
     h2 {
       color: variables.$color-black;
@@ -42,11 +43,22 @@
 @media screen and (max-width: 1024px) {
   .form {
     margin: 0 5%;
+    .form-details form {
+      width: 35%;
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
   .form {
-    margin: 0;
+    margin: 2%;
+    .form-details {
+      .description {
+        width: 40%;
+      }
+      form {
+        width: 60%;
+      }
+    }
   }
 }
