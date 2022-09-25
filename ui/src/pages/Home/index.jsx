@@ -1,14 +1,16 @@
 import { Header, Carousel, HomePageCategories } from "../../container";
-
-import categoryData from "./data.json";
+import { useGetCategoriesQuery, useGetBannersQuery } from "../../api";
 
 const Home = () => {
+  const { data: categories, isError } = useGetCategoriesQuery();
+  const { data: banners } = useGetBannersQuery();
+
   return (
     <div>
       <Header />
       <div className="home">
-        <Carousel />
-        <HomePageCategories categories={categoryData} />
+        {banners && <Carousel banners={banners} />}
+        {categories && <HomePageCategories categories={categories} />}
       </div>
     </div>
   );

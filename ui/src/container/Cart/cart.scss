@@ -32,11 +32,13 @@
       .close {
         width: 1em;
         font-size: 3em;
+        cursor: pointer;
       }
     }
     .cart-items {
       overflow-y: scroll;
       height: 100%;
+      padding-bottom: 30%;
     }
     .promotion-banner {
       display: flex;
