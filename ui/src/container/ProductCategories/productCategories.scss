@@ -7,6 +7,12 @@
     list-style: none;
     padding: 5% 10%;
     border-bottom: 1px solid variables.$app-dark-grey-color;
+    cursor: pointer;
+  }
+  .active {
+    color: variables.$app-red-color;
+    font-weight: bold;
+    background-color: variables.$app-background-active-color;
   }
 }
 
