@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 import "./productCategories.scss";
 
 const ProductCategories = ({
@@ -6,13 +7,25 @@ const ProductCategories = ({
   updateCategory,
   activeCategoryInfo,
 }) => {
+  const [isOpen, toggleOpen] = useState(false);
+
+  const width = window && window.innerWidth;
+  const isMobile = !!(width <= 480);
+
+  const onCategoryClick = (category) => {
+    if (isMobile) toggleOpen(!isOpen);
+    updateCategory(category.key);
+  };
+
   const category = categoriesInfo.map((category) => {
     if (category.order < 0) return null;
+
+    const isActiveCategory = activeCategoryInfo?.id === category.id;
     return (
       <li
         key={category.key}
-        onClick={() => updateCategory(category.key)}
-        className={activeCategoryInfo?.id === category.id ? "active" : ""}
+        onClick={() => onCategoryClick(category)}
+        className={isActiveCategory ? "active" : ""}
       >
         {category.name}
       </li>
@@ -20,7 +33,12 @@ const ProductCategories = ({
   });
   return (
     <div className="categories-list">
-      <ul>{category}</ul>
+      {isMobile ? (
+        <div className="selected" onClick={() => toggleOpen(!isOpen)}>
+          {activeCategoryInfo?.name || categoriesInfo[0].name}
+        </div>
+      ) : null}
+      <ul className={isMobile && !isOpen ? "hide" : "show"}>{category}</ul>
     </div>
   );
 };
