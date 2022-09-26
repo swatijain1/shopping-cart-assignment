@@ -38,7 +38,7 @@ const Cart = ({ closeCart }) => {
         {heading}
         <div className="cart-items">
           <CartItems items={items} />
-          {promotionBanner}
+          {items.length && promotionBanner}
         </div>
 
         <CartCheckout

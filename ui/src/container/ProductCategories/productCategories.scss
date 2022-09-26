@@ -12,27 +12,35 @@
   .active {
     color: variables.$app-red-color;
     font-weight: bold;
-    background-color: variables.$app-background-active-color;
+    background-color: variables.$color-white;
+    border: 2px solid variables.$app-grey-color;
+    border-top: none;
+    border-bottom: 1px solid variables.$app-dark-grey-color;
+  }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  .selected {
+    background-color: variables.$app-red-color;
+    color: variables.$color-white;
+    font-weight: bold;
+    padding: 5% 10%;
+    border-bottom: 1px solid variables.$app-dark-grey-color;
+    cursor: pointer;
+    &::after {
+      content: "\2193";
+      position: absolute;
+      color: variables.$color-white;
+      right: 5%;
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
   .categories-list {
     width: 100%;
-    display: relative;
-    li {
-      display: none;
-      &:first-child {
-        background-color: variables.$app-red-color;
-        color: variables.$color-white;
-        display: block;
-      }
-      &::after {
-        content: "\2193";
-        position: absolute;
-        color: variables.$color-white;
-        right: 5%;
-      }
-    }
   }
 }
