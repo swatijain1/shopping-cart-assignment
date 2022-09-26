@@ -63,7 +63,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div data-testid="register-container">
       <Header />
       <Form
         onSubmithandler={onSubmit}

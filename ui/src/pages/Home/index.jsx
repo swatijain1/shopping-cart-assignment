@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <div className="home">
+      <div className="home" data-testid="home-container">
         {banners && <Carousel banners={banners} />}
         {categories && <HomePageCategories categories={categories} />}
       </div>

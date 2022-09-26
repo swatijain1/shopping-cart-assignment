@@ -37,7 +37,7 @@ const ProductListing = () => {
   };
 
   return (
-    <div>
+    <div data-testid="product-listing-container">
       <Header />
       <div className="product-listing-page">
         {categoriesInfo && (

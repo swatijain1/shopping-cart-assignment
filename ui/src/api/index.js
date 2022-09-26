@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { transformResponse } from "../utils/transform";
 
-const apiSlice = createApi({
+export const params = {
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
   endpoints: (builder) => ({
@@ -24,7 +24,9 @@ const apiSlice = createApi({
       }),
     }),
   }),
-});
+};
+
+const apiSlice = createApi(params);
 
 export const {
   useGetCategoriesQuery,
