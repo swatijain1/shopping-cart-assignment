@@ -5,7 +5,12 @@ import contentString from "../../contentStrings/en.json";
 
 import "./cartCheckout.scss";
 
-const CartCheckout = ({ displayTotalPrice, isEmptyCart, closeCart }) => {
+const CartCheckout = ({
+  displayTotalPrice,
+  isEmptyCart,
+  closeCart,
+  onCheckout,
+}) => {
   const { cart } = contentString;
   let checkout;
   if (isEmptyCart) {
@@ -15,7 +20,7 @@ const CartCheckout = ({ displayTotalPrice, isEmptyCart, closeCart }) => {
       <>
         <p>{cart.promoCodeMessage}</p>
         <div className="checkout">
-          <Button onClickHandler={closeCart}>
+          <Button onClickHandler={onCheckout}>
             <div className="total">
               <p className="proceed">{cart.proceed}</p>
               <p>{`${cart.currency}${displayTotalPrice}`}</p>
@@ -34,6 +39,7 @@ CartCheckout.propTypes = {
   displayTotalPrice: PropTypes.string,
   isEmptyCart: PropTypes.bool.isRequired,
   closeCart: PropTypes.func.isRequired,
+  onCheckout: PropTypes.func.isRequired,
 };
 
 export default CartCheckout;

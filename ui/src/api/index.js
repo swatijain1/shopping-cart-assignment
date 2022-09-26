@@ -16,6 +16,13 @@ const apiSlice = createApi({
     getProducts: builder.query({
       query: () => "/products",
     }),
+    addToCart: builder.mutation({
+      query: (body) => ({
+        url: "/addToCart",
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
@@ -23,6 +30,7 @@ export const {
   useGetCategoriesQuery,
   useGetBannersQuery,
   useGetProductsQuery,
+  useAddToCartMutation,
 } = apiSlice;
 
 export default apiSlice;

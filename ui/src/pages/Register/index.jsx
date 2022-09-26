@@ -1,11 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header, Form } from "../../container";
 import contentString from "../../contentStrings/en.json";
 import { getRegisterFormFields } from "../../utils/form";
 import { matchConfirmPassword } from "../../utils/input";
-import { FIELD_NAMES, FORM_TYPES, ERROR_TYPES } from "../../constants";
+import {
+  FIELD_NAMES,
+  FORM_TYPES,
+  ERROR_TYPES,
+  PAGE_URL,
+} from "../../constants";
 
 const Register = () => {
+  const navigate = useNavigate();
   /*
     Input format = {
       value: inputValue,
@@ -52,7 +59,7 @@ const Register = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    // callApi(email, password)
+    if (!error.showError) navigate(PAGE_URL.HOME);
   };
 
   return (

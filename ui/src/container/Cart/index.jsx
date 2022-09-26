@@ -3,6 +3,7 @@ import Proptypes from "prop-types";
 
 import { CartItems, CartCheckout } from "../../components";
 import { getCartInfo } from "../../reducer/cart";
+import { useAddToCartMutation } from "../../api";
 import contentString from "../../contentStrings/en.json";
 
 import "./cart.scss";
@@ -12,6 +13,17 @@ const Cart = ({ closeCart }) => {
 
   const { cart } = contentString;
   const { totalItems, items } = cartInfo;
+
+  const [addToCart] = useAddToCartMutation();
+  const onCheckout = async () => {
+    try {
+      const result = await addToCart(cartInfo).unwrap();
+      console.log(result);
+      closeCart();
+    } catch (e) {
+      console.log("error: ", e);
+    }
+  };
 
   const heading = (
     <div className="cart-heading">
@@ -45,6 +57,7 @@ const Cart = ({ closeCart }) => {
           displayTotalPrice={cartInfo.displayTotalPrice}
           closeCart={closeCart}
           isEmptyCart={!items.length}
+          onCheckout={onCheckout}
         />
       </div>
     </div>
